@@ -10,7 +10,11 @@ SRC_URI = "file://setup.py \
 
 S = "${WORKDIR}"
 
-inherit setuptools
+inherit setuptools3 
+
+DEPENDS += "python3-setuptools-native"
+
+#RDEPENDS_${PN} += "python3-core"
 
 do_install_append () {
     install -d ${D}${bindir}
