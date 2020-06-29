@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # import the necessary packages
 from imutils.video import VideoStream
 from imutils.video import FPS
@@ -9,10 +8,13 @@ import imutils
 import time
 import cv2
 import os.path
+<<<<<<< HEAD
 import io
 import socket
 import struct
 import time
+=======
+>>>>>>> 51945bb8d2644665cca715824eb4b66e8705fdae
 
 ################# Getting and parsing datetime in one string ###################
 
@@ -71,7 +73,10 @@ datadog = 0;
 datacat = 0;
 # Create an array for jason format
 data = {}
+<<<<<<< HEAD
 showVideo = args["showimage"]
+=======
+>>>>>>> 51945bb8d2644665cca715824eb4b66e8705fdae
 # load our serialized model from disk
 print("[INFO] loading model...")
 net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
@@ -128,7 +133,10 @@ while True:
                         idx = int(detections[0, 0, i, 1])
                         box = detections[0, 0, i, 3:7]*np.array([w, h, w, h])
                         (startX, startY, endX, endY) = box.astype("int")
+<<<<<<< HEAD
                         label = " ,".join("{}: {}".format(obj, count) for (obj, count) in objCount.items())
+=======
+>>>>>>> 51945bb8d2644665cca715824eb4b66e8705fdae
                         if CLASSES[idx] in CONSIDER:
                                 objCount[CLASSES[idx]] += 1
                                 # draw the prediction on the frame
@@ -157,9 +165,13 @@ while True:
                         
 	# show the output frame
 	#WritingFile(objCount["person"])
+<<<<<<< HEAD
 	if showVideo == "yes":
                 cv2.imshow("Frame", frame)
         
+=======
+	cv2.imshow("Frame", frame)
+>>>>>>> 51945bb8d2644665cca715824eb4b66e8705fdae
 	key = cv2.waitKey(1) & 0xFF
 
 	# if the `q` key was pressed, break from the loop
